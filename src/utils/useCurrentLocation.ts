@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { Coordinates } from "../features/currentWeather/interface";
+import type { Coordinates } from "../interface/weatherInterface";
 
 interface GeolocationError {
   code: number;

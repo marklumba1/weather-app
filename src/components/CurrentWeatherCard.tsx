@@ -1,4 +1,3 @@
-import Card from "./Card";
 import type { CurrentWeatherResponse } from "../interface/weatherInterface";
 interface CurrentWeatherProps {
   currentWeather: CurrentWeatherResponse;
@@ -13,33 +12,7 @@ const CurrentWeather: React.FC<CurrentWeatherProps> = ({ currentWeather }) => {
     hour: "2-digit",
     minute: "2-digit",
   });
-  const weatherData = [
-    {
-      title: "Sunrise",
-      data: new Date(currentWeather.sys.sunrise * 1000).toLocaleTimeString(),
-      icon: "sunrise", // or "wi wi-sunrise" if you use that class
-    },
-    {
-      title: "Sunset",
-      data: new Date(currentWeather.sys.sunset * 1000).toLocaleTimeString(),
-      icon: "sunset",
-    },
-    {
-      title: "Wind Speed",
-      data: `${currentWeather.wind.speed} m/s`,
-      icon: "strong-wind", // you can change icon as needed
-    },
-    {
-      title: "Wind Degree",
-      data: `${currentWeather.wind.deg}°`,
-      icon: "direction", // optional icon
-    },
-    {
-      title: "Wind Gust",
-      data: `${currentWeather.wind.gust} m/s`,
-      icon: "windy", // optional icon
-    },
-  ];
+
   return (
     <div className="text-center">
       <p className="font-bold text-3xl">{currentWeather.name}</p>

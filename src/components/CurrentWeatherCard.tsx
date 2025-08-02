@@ -15,7 +15,7 @@ const CurrentWeather: React.FC<CurrentWeatherProps> = ({ currentWeather }) => {
 
   return (
     <div className="text-center">
-      <p className="font-bold text-3xl">{currentWeather.name}</p>
+      <p className="font-bold text-3xl">{currentWeather.name}, {currentWeather.sys.country}</p>
       <p className="capitalize">{currentWeather.weather[0].description}</p>
       <div className="flex flex-col sm:flex-row items-center justify-center">
         <img

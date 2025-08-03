@@ -8,8 +8,9 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange }) => {
       <input
         type="text"
         placeholder="Search City"
-        className="outline-0 p-2 m-2 rounded border text-white active:outline-0  focus:outline-0"
+        className="outline-0 p-2 w-full rounded border active:outline-0  focus:outline-0"
         value={value}
+        id="search"
         onChange={(e) => onChange(e.target.value)}
       />
   );

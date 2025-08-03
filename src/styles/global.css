@@ -1,15 +1,7 @@
 @import "tailwindcss";
 
 html {
-  @apply bg-slate-900 text-slate-300;
-}
-/* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
+  @apply text-white font-semibold text-lg;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 
-/* Hide scrollbar for Firefox */
-.hide-scrollbar {
-  scrollbar-width: none;
-  -ms-overflow-style: none; /* IE and Edge */
 }

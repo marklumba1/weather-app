@@ -8,19 +8,33 @@ import "weather-icons/css/weather-icons.css";
 import ForecastCard from "./components/ForecastCard";
 import Section from "./components/Section";
 import Background from "./components/Background";
+import useCurrentLocation from "./utils/useCurrentLocation";
 
 const App: React.FC = () => {
+    const currentLocation = useCurrentLocation()
   const [search, setSearch] = useState("");
   const debouncedSearch = useDebounce(search, 500);
 
+  
+  const location = currentLocation.location;
+  const hasValidLocation = location && location.lat != null && location.lon != null;
+
+   const queryParam: string | { lat: number; lon: number } =
+    debouncedSearch.trim() !== ""
+      ? debouncedSearch.trim()
+      : hasValidLocation
+      ? location
+      : "manila";
+
+
   const { data, isLoading, error } = useQuery({
-    queryKey: ["currentWeather", debouncedSearch],
-    queryFn: () => fetchCurrentWeather(debouncedSearch),
+    queryKey: ["currentWeather", debouncedSearch, currentLocation.location],
+    queryFn: () => fetchCurrentWeather(queryParam),
   });
 
   const { data: forecast } = useQuery({
-    queryKey: ["forecast", debouncedSearch],
-    queryFn: () => fetchForecast(debouncedSearch),
+    queryKey: ["forecast", debouncedSearch, currentLocation.location],
+    queryFn: () => fetchForecast(queryParam),
   });
 
   const [prevCondition, setPrevCondition] = useState("Default");

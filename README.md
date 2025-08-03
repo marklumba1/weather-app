@@ -25,13 +25,8 @@ A responsive weather application built with **React**, **Tailwind CSS**, and the
 ## Getting Started
 
 1. Clone the repository
-git clone https://github.com/yourusername/weather-app.git
-cd weather-app
 
 2. Install dependencies
-bash
-Copy
-Edit
 npm install
 
 3. Create .env file
@@ -42,18 +37,9 @@ Refer to .env.example for reference.
 
 4. Start the development server
 npm run dev
-Then open http://localhost:5173 in your browser.
 
-### Build for Production
+## Build for Production
 npm run build
 
-### Project Structure
-src/
-├── api/                // API logic (fetch functions)
-├── components/         // Reusable UI components
-├── utils/              // Custom hooks and utilities
-├── App.tsx             // Main component
-├── main.tsx            // App entry point
-
-### API Reference
+## API Reference
 This app uses OpenWeatherMap. You need to sign up and generate a free API key to use the weather data.
